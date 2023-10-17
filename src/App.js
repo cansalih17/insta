@@ -45,9 +45,13 @@ function App() {
         <Route
           path="/post-share"
           element={
-            <>
-              <Header /> <PostShare />
-            </>
+            currentUser ? (
+              <>
+                <Header /> <PostShare />
+              </>
+            ) : (
+              <Login />
+            )
           }
         />
         <Route
